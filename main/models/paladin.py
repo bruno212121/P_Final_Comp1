@@ -1,8 +1,9 @@
 #Personaje 2
 from ProyectoFinal import Personajes
+from .. import db 
 
-class paladin(Personajes):
-    def __init__(self,nombre,edad,fuerza,destreza,temple):
+class Paladin(Personajes):
+    def __init__(self,fuerza,destreza,temple):
         self.fuerza = fuerza
         self.destreza = destreza
         self.temple = temple
