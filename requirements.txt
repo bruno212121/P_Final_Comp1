@@ -1,1 +1,3 @@
+flask
+python-dotenv
 cocos2d
