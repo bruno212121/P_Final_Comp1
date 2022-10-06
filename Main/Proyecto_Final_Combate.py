@@ -1,12 +1,6 @@
-#Proyecto Final - Computacion I
+from Clases import humano, paladin, mago
 
-#Juego de combate
-
-# Sebastian - Bruno
-
-
-#CREACION DE CLASE PERSONAJE Y ATRIBUTOS INICIALES
-
+"""
 class personajes:
     def __init__(self, nombre="",clase="Humano",estadisticas=[1,50,5,5,0,'True']):
         self.clase = clase
@@ -20,7 +14,7 @@ class personajes:
             salida += "\n {0}: {1}".format(k,v)
             return salida
     def calculo_nivel(self): # Sistema de leveo de los personajes
-        self.estadisticas["Nivel"] = int(self.estadisticas["Experiencia"] **.5)+1
+        self.estadisticas["Nivela"] = int(self.estadisticas["Experiencia"] **.5)+1
 
     def ataque(self,enemigo):
         print("\n{0} poder lanzado a {1} with {2} ataque. {1} tiene {3} defensa.".format(self.nombre,enemigo.nombre,self.estadisticas["Ataque"],enemigo.estadisticas["Defensa"]))
@@ -30,7 +24,7 @@ class personajes:
             print("\n Ataque certero, ahora la salud de {0} es de {1}".format(enemigo.nombre,enemigo.estadisticas["Salud"]))
         else:
             print("\n Fallaste el ataque")
-
+"""
 def nuevo_personaje(creado): #Metodo para seleccionar la clase a jugar
         eleccion = ""
         aceptado = False
@@ -66,7 +60,7 @@ def lucha(personajes): #Este es el metodo de lucha por turno
         for i in range (len(personajes)):
             if not i == turno:
                 partida.append(i)
-                print(" - ({0}): {1} nombrado {2} ".format(i, personajes[i].c,personajes[i].name))
+                print(" - ({0}): {1} nombrado {2} ".format(i, personajes[i].c,personajes[i].nombre))
         sel = -1
         while not sel in partida:
             s = input("Seleccion: ")
@@ -82,25 +76,4 @@ def lucha(personajes): #Este es el metodo de lucha por turno
         turno +=1
         if turno == len(personajes):
             turno = 0
-def menu():
-    personajes = []
-    opcion = ""
-    print("--- Bienvenido Juego de Combate LA CAIDA DEL REY I ---")
-    while not opcion.lower() in ["q","p"]:
-        opcion = input("\n(R)egistrar nombre\n(I)niciar combate\n(S)alir del juego\n\nPor favor escriba la opcion correcta: ").lower()
-
-        if opcion == "i" and len(personajes) < 2:
-            print("\n ->no puede jugar solo con un personaje, crea los personajes primero")
-
-        elif opcion == "r":
-            personajes.append(nuevo_personaje(personajes))
-            opcion = ""
-        elif opcion == "i":
-            lucha(personajes)
-        elif opcion == "s":
-            print("\n !Gracias por jugar!, Hasta la proxima")
-
-menu()
-
-
 
