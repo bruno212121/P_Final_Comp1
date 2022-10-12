@@ -1,4 +1,4 @@
-from seleccion import nuevo_personaje
+from seleccion import nuevo_personaje, lucha
 
 def menu():
     personajes = []
