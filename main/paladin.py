@@ -4,9 +4,9 @@ class Paladin():
         self.c = "Paladin"
         self.estadisticas = {
             "SALUD": 100,
-            "ATAQUE": 50,
-            "DEFENSA": 20,
-            "VELOCIDAD": 50,
+            "ATAQUE": 70,
+            "DEFENSA": 50,
+            "VELOCIDAD": 30,
             "LUCK": 50,
             }
     def __str__(self):

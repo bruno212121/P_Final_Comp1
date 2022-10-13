@@ -3,7 +3,7 @@ class Mago():
         self.nombre = nombre
         self.c = "Mago"
         self.estadisticas = {
-            "SALUD": 100,
+            "SALUD": 90,
             "ATAQUE": 50,
             "DEFENSA": 20,
             "MAGIA": 100,

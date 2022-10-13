@@ -7,7 +7,7 @@ class Humano():
             "ATAQUE": 50,
             "DEFENSA": 20,
             "VELOCIDAD": 50,
-            "LUCK": 50,
+            "LUCK": 80,
             }
     def __str__(self):
         return "Nombre: {0} Clase: {1} Salud: {2} Ataque: {3} Defensa: {4} velocidad {5} luck {6}".format(
