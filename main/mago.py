@@ -8,10 +8,11 @@ class Mago():
             "DEFENSA": 20,
             "MAGIA": 100,
             "VELOCIDAD": 50,
-            "LUCK": 50,
+            "EXPERIENCIA": 50,
+            "NIVEL": 1,
         }
     def __str__(self):
-        return "Nombre: {0} Clase: {1} Salud: {2} Ataque: {3} Defensa: {4} Magia: {5} Velocidad: {6} Luck: {7}".format(
+        return "Nombre: {0} Clase: {1} Salud: {2} Ataque: {3} Defensa: {4} Magia: {5} Velocidad: {6} Experiencia: {7} Nivel {8}".format(
             self.nombre,
             self.c,
             self.estadisticas["SALUD"],
@@ -19,7 +20,8 @@ class Mago():
             self.estadisticas["DEFENSA"],
             self.estadisticas["MAGIA"],
             self.estadisticas["VELOCIDAD"],
-            self.estadisticas["LUCK"]
+            self.estadisticas["EXPERIENCIA"],
+            self.estadisticas["NIVEL"]
         )
     def Ataque(self, enemigo):
         if self.estadisticas["ATAQUE"] >= enemigo.estadisticas["DEFENSA"]:

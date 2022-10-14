@@ -15,27 +15,27 @@ def nuevo_personaje(creado): #Metodo para seleccionar la clase a jugar
                     print("El nombre que ha introducido, ya esta creado")
 
         while not eleccion in ["h","p","m"]: 
-            eleccion = input("""\n Por favor selecciona la clase {0}. (H)umano
+            eleccion = input("""\n Por favor selecciona la clase {0}. (H)umano \n
 (H)UMANO: El humano es un guerrero que puede usar armas y armaduras, pero no puede usar magia.
 Salud: 100
 Ataque: 50
 Defensa: 20
 Velocidad: 50
-Luck: 80
+Experiencia: 80
 ---------------------------
 (P)ALADIN: El paladin es un guerrero que puede usar armas y armaduras, pero no puede usar magia.
 Salud: 100
 Ataque: 70
 Defensa: 50
 Velocidad: 30
-Luck: 50
+Experiencia: 50
 ---------------------------
-(M)ago: El mago es un guerrero que puede usar armas y magia, pero no puede usar armadura.
+(M)AGO: El mago es un guerrero que puede usar armas y magia, pero no puede usar armadura.
 Salud: 90
 Ataque: 50
 Defensa: 20
 Velocidad: 50
-Luck: 50
+Experiencia: 50
 MAGIA: 100
 --------------------------- 
 \n:""".format(n).lower()) 
