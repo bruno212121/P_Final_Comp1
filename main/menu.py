@@ -8,7 +8,7 @@ def menu():
     while not opcion.lower() in ["q","p"]: 
         opcion = input("\n(R)egistrar nombre\n(I)niciar combate\n(S)alir del juego\n\nPor favor escriba la opcion correcta: ").lower()
 
-        if opcion == "i" and len(personajes) < 2:
+        if opcion == "i" and len(personajes) < 10:
             print("\n ->no puede jugar solo con un personaje, crear al menos diez enemigos para iniciar el combate")
 
         elif opcion == "r":
