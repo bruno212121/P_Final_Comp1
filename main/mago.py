@@ -1,3 +1,4 @@
+from items import *
 class Mago():
     def __init__(self, nombre):
         self.nombre = nombre
@@ -27,5 +28,8 @@ class Mago():
         if self.estadisticas["ATAQUE"] >= enemigo.estadisticas["DEFENSA"]:
             enemigo.estadisticas["SALUD"] -= self.estadisticas["ATAQUE"]
             print("\n Ataque certero, ahora la salud de {0} es de {1}".format(enemigo.nombre,enemigo.estadisticas["SALUD"]))
+            self.estadisticas.update(emp.get_itm())
+            print("-->Felicidades has dropeado", emp.get_itm(), " y mejoraste tus atributos<---")
+            print("Tus atributos actualizados son: ",self.estadisticas) 
         else:
             print("\n Fallaste el ataque")
