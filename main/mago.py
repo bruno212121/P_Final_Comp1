@@ -1,4 +1,5 @@
 from items import *
+
 class Mago():
     def __init__(self, nombre):
         self.nombre = nombre
@@ -30,6 +31,27 @@ class Mago():
             print("\n Ataque certero, ahora la salud de {0} es de {1}".format(enemigo.nombre,enemigo.estadisticas["SALUD"]))
             self.estadisticas.update(emp.get_itm())
             print("-->Felicidades has dropeado", emp.get_itm(), " y mejoraste tus atributos<---")
-            print("Tus atributos actualizados son: ",self.estadisticas) 
+            items = ()
+            while not items in ["EMBLEMA","PECHERA","BOTAS","POCION","ESPECIAL","emblema","pechera","botas","pocion","especial"]:
+                items = input("¿Que item quieres usar? ")
+                if items == ("EMBLEMA").lower():
+                    self.estadisticas["ATAQUE"] = self.estadisticas["ATAQUE"] + 10
+                    print("Has mejorado tu atributo ATAQUE")
+                elif items == ("PECHERA").lower():
+                    self.estadisticas["DEFENSA"] = self.estadisticas["DEFENSA"] + 20
+                    print("Has mejorado tu atributo DEFENSA")
+                elif items == ("BOTAS").lower():
+                    self.estadisticas["VELOCIDAD"] = self.estadisticas["VELOCIDAD"] + 30
+                    print("Has mejorado tu atributo VELOCIDAD")
+                elif items == ("POCION").lower():
+                    self.estadisticas["SALUD"] = self.estadisticas["SALUD"] + 5
+                    print("Has mejorado tu atributo SALUD")
+                elif items == ("ESPECIAL").lower():
+                    self.estadisticas["VELOCIDAD"] = self.estadisticas["VELOCIDAD"] + 23
+                    self.estadisticas["SALUD"] = self.estadisticas["SALUD"] + 23
+                    print("Has mejorado tus atributos VELOCIDAD y SALUD")
+                else:
+                    print("No has mejorado tus atributos")
+                    print("los atributos que se pueden mejorar son: GUANTES, PECHERA, BOTAS, POCION, ESPECIAL")
         else:
             print("\n Fallaste el ataque")

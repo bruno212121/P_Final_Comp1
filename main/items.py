@@ -2,7 +2,7 @@
 class items():
     def __init__(self):
         self.p = {
-            "GUANTES": ["AGILIDAD",10],
+            "EMBLEMA": ["ATAQUE",10],
             "PECHERA": ["DEFENSA",20],
             "BOTAS": ["VELOCIDAD",30],
             "POCION": ["SALUD:",5],

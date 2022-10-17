@@ -10,7 +10,6 @@ def menu():
 
         if opcion == "i" and len(personajes) < 10:
             print("\n ->no puede jugar solo con un personaje, crear al menos diez enemigos para iniciar el combate")
-
         elif opcion == "r":
             personajes.append(nuevo_personaje(personajes))
             opcion = ""
