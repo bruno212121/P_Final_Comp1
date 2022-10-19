@@ -1,16 +1,31 @@
 from seleccion import nuevo_personaje
 from orcos import *
 
-def lucha(personajes): #Este es el metodo de lucha por turno
-    print("--------------------- Comienza la batalla -----------------------\n")
-    for c in personajes:
-        print(c)
-        print("")
-    juego_terminado = False
-    turno = 0
-    while not juego_terminado:
+malo = Orco()
+
+
+class Batalla():
+    
+    def __init__(self):
+        self.personajes = personajes
+        self.malo = malo
+        self.opcion = 0
+
+    def seleccion(personajes):
+        print("Selecciona tu personaje")
         for i in range(len(personajes)):
-            print("Seleccionar personaje para luchar: {0} {1} ".format(i, personajes[i].c,personajes[i].nombre))
-        sel = -1
-        while not sel in Orco:
-            
+            print("{0}. {1}".format(i+1,personajes[i].nombre))
+            opcion = int(input("Selecciona tu personaje: "))
+            return opcion
+
+    def lucha(personajes,opcion,malo):
+        print("--------------------- Comienza la batalla -----------------------\n")
+        
+        juego_terminado = False
+        turno = 0
+        
+        while not juego_terminado:
+            print("Turno de {0} {1} : ".format(self.opcion.c,self.opcion.nombre))
+            partida = []
+
+           

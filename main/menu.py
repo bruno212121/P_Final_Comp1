@@ -1,5 +1,5 @@
 from seleccion import nuevo_personaje
-from luchados import *
+from luchados import seleccion
 
 def menu():
     personajes = []
@@ -16,7 +16,7 @@ def menu():
             personajes.append(nuevo_personaje(personajes))
             opcion = ""
         elif opcion == "i":
-            lucha(personajes)
+            seleccion(personajes)
         elif opcion == "s":
             print("\n !Gracias por jugar!, Hasta la proxima")
             opcion = "q"
