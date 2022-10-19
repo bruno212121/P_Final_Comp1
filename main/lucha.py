@@ -11,7 +11,7 @@ def lucha(personajes): #Este es el metodo de lucha por turno
     while not juego_terminado: 
         print("Turno de {0} {1}. Selecciona un enemigo para atacar: ".format(personajes[turno].c,personajes[turno].nombre))
         partida = []
-        for i in range (len(personajes)):
+        for i in range (len(personajes)): 
             if not i == turno:
                 partida.append(i)
                 print(" - ({0}): {1} nombrado {2} ".format(i, personajes[i].c,personajes[i].nombre))

@@ -1,15 +1,17 @@
 from seleccion import nuevo_personaje
-from lucha import lucha
+from luchados import *
 
 def menu():
     personajes = []
     opcion = ""
-    print("--- Bienvenido Juego de Combate LA CAIDA DEL REY I --- \n -> PARA PODER JUGAR DEBES CREAR DIEZ ENEMIGOS <-")
+    print("--- Bienvenido Juego de Combate LA CAIDA DEL REY I --- \n -> PARA PODER JUGAR DEBES CREAR TRES PERSONAJES <-")
     while not opcion.lower() in ["q","p"]: 
         opcion = input("\n(R)egistrar nombre\n(I)niciar combate\n(S)alir del juego\n\nPor favor escriba la opcion correcta: ").lower()
 
-        if opcion == "i" and len(personajes) < 10:
-            print("\n ->no puede jugar solo con un personaje, crear al menos diez enemigos para iniciar el combate")
+        if opcion == "i" and len(personajes) < 3:
+            print("\n ->no puede jugar con tan pocos personajes, crear al menos tres personajes para iniciar")
+        elif opcion == "r" and len(personajes) == 3:
+            print("no se pueden crear mas personajes")
         elif opcion == "r":
             personajes.append(nuevo_personaje(personajes))
             opcion = ""
