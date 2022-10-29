@@ -1,7 +1,7 @@
 from seleccion import nuevo_personaje
-from luchados import seleccion
+from luchados import *
 
-def menu():
+def menu(Batalla):
     personajes = []
     opcion = ""
     print("--- Bienvenido Juego de Combate LA CAIDA DEL REY I --- \n -> PARA PODER JUGAR DEBES CREAR TRES PERSONAJES <-")
@@ -16,7 +16,7 @@ def menu():
             personajes.append(nuevo_personaje(personajes))
             opcion = ""
         elif opcion == "i":
-            seleccion(personajes)
+            Batalla(personajes,malo)
         elif opcion == "s":
             print("\n !Gracias por jugar!, Hasta la proxima")
             opcion = "q"
