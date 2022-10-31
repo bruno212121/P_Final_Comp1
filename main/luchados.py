@@ -1,67 +1,74 @@
+from ast import Break
 from seleccion import nuevo_personaje
 from orcos import *
 import os,time
 
-
 malo = Orco()
 
 def limpiar():
-    os.system("cls")
+    os.system("cls") 
 
-class Batalla():
+
+def batalla(personajes):
+    for c in personajes:
+        print(c)
+        print("")
     
-    def __init__(self,personajes):
-        self.personajes = personajes
-        self.malo = malo
-        self.opcion = 0
-
-    def seleccion(personajes):
-        print("Selecciona tu personaje")
-        for i in range(len(personajes)):
-            print("{0}. {1}".format(i+1,personajes[i].nombre))
-            opcion = int(input("Selecciona tu personaje: "))
-            return opcion
-
-    def lucha(self,personajes,malo):
-        print("--------------------- Comienza la batalla -----------------------\n")
-        
         juego_terminado = False
-        turno = 0
-        
-        while not juego_terminado:
-            print("Turno de {0} {1} : ".format(self.opcion.c,self.opcion.nombre))
-            partida = []
-            for i in range(len(personajes)):
-                if not i == turno:
-                    partida.append()
-                    print(" - ({0}): {1} nombrado {2}".format(i, personajes[i].c,personajes[i].nombre))
-            sel = -1
 
-        while personajes[sel].estadisticas["SALUD"] > 0 and malo.estadisticas["SALUD"] > 0:
-            limpiar()
-            print("-----------------------------------------")
-            print(sel)
-            print("----------------------------------------")
-            print(malo)
-            print("----------------------------------------")
-            print("Es turno de atacar de  {0} ".format(personajes[sel].nombre))
-            select = personajes[sel]
-            malo.estadisticas["SALUD"] -= personajes[sel].Ataque
-            print("Atacando")
-            time.sleep(1)
-            if personajes[sel].estadisticas["SALUD"] <= 0 and malo.estadisticas["SALUD"] <=0:
+        print("Seleciona personaje para la batalla: ")
+        partida = []
+        for i in range (len(personajes)):
+            partida.append(i)
+            print(" - ({0}): {1} nombrado {2} ".format(i, personajes[i].c,personajes[i].nombre)) 
+        sel = -1 
+        while not sel in partida:
+            s = input("Seleccion: ") 
+            try :
+                sel = int(s)
+            except:
+                print("No es una opcion correcta")
+        print("Comienza la batalla")
+
+    while not juego_terminado:
+        personajes[sel].Ataque(malo)
+        time.sleep(2)
+        if malo.estadisticas["SALUD"] <= 0 and malo.nivel < maximo:
+            print("Felicitaciones! {0} ha muerto.".format(malo.nombre))
+            nivel = " "
+            while not nivel in ["SALUD","DEFENSA","VELOCIDAD","ATAQUE","salud","defensa","velocidad","ataque"]:
+                nivel = input("ingrese el atributo que desea subir de nivel: ")
+                if nivel == ("SALUD").lower():
+                    personajes[sel].estadisticas["SALUD"] = personajes[sel].estadisticas["SALUD"] + 10
+                    print("La salud de {0} es de {1}".format(personajes[sel].nombre,personajes[sel].estadisticas["SALUD"])) 
+                elif nivel == ("ATAQUE").lower():
+                    personajes[sel].estadisticas["ATAQUE"] = personajes[sel].estadisticas["ATAQUE"] + 10
+                    print("El ataque de {0} es de {1}".format(personajes[sel].nombre,personajes[sel].estadisticas["ATAQUE"]))
+                elif nivel == ("DEFENSA").lower():
+                    personajes[sel].estadisticas["DEFENSA"] = personajes[sel].estadisticas["DEFENSA"] + 10
+                    print("La defensa de {0} es de {1}".format(personajes[sel].nombre,personajes[sel].estadisticas["DEFENSA"]))
+                elif nivel == ("VELOCIDAD").lower():
+                    personajes[sel].estadisticas["VELOCIDAD"] = personajes[sel].estadisticas["VELOCIDAD"] + 10
+                    print("La velocidad de {0} es de {1}".format(personajes[sel].nombre,personajes[sel].estadisticas["VELOCIDAD"]))
+                else:
+                    print("No es una opcion correcta")
+                    print("Los atributos que puedes utilizar son: Salud, Ataque, Defensa, Velocidad")       
+                print("El {0} volvio!! y su nivel es de {1}".format(malo.nombre,malo.nivel))
+                malo.Ataque(personajes[sel])
                 break
-            print("turno de ", malo.NOMBRE)
-            personajes[sel].estadisticas["SALUD"] -= malo.Ataque
-            print(malo.nombre,"esta empezando a atacar")
-            print("Atacando..")
-            time.sleep(1)
-            if personajes[sel].estadisticas["SALUD"] <= 0 and malo.estadisticas["SALUD"] <=0:
-                break
-        if personajes[sel].estadisticas["SALUD"] > 0:
-            print("GANO", personajes[sel].nombre)
         else:
-            print("GANO", malo.nombre)
+            malo.Ataque(personajes[sel])
+            if personajes[sel].estadisticas["SALUD"] <= 0:
+                print("Juego terminado! {0} ha muerto.".format(personajes[sel].nombre))
+                juego_terminado = True
+            else:
+                print("La salud de {0} es de {1}".format(malo.nombre,malo.estadisticas["SALUD"]))
+                print("La salud de {0} es de {1}".format(personajes[sel].nombre,personajes[sel].estadisticas["SALUD"]))
+
+        
+
+        
+
 
 
 
