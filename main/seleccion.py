@@ -19,21 +19,21 @@ def nuevo_personaje(creado): #Metodo para seleccionar la clase a jugar
 (H)UMANO: El humano es un guerrero que puede usar armas y armaduras, pero no puede usar magia.
 Salud: 100
 Ataque: 50
-Defensa: 20
+Defensa: 50
 Velocidad: 50
 Experiencia: 80
 ---------------------------
 (P)ALADIN: El paladin es un guerrero que puede usar armas y armaduras, pero no puede usar magia.
 Salud: 100
 Ataque: 70
-Defensa: 50
+Defensa: 60
 Velocidad: 30
 Experiencia: 50
 ---------------------------
 (M)AGO: El mago es un guerrero que puede usar armas y magia, pero no puede usar armadura.
 Salud: 90
 Ataque: 50
-Defensa: 20
+Defensa: 50
 Velocidad: 50
 Experiencia: 50
 MAGIA: 100

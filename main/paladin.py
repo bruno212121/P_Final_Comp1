@@ -9,7 +9,7 @@ class Paladin():
         self.estadisticas = {
             "SALUD": 100,
             "ATAQUE": 70,
-            "DEFENSA": 50,
+            "DEFENSA": 60,
             "VELOCIDAD": 30,
             "EXPERIENCIA": 50,
             "NIVEL": 1,
