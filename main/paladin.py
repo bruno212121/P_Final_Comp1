@@ -1,5 +1,6 @@
+from random import random
 from items import *
-from random import *
+
 
 class Paladin():
     def __init__(self, nombre):
@@ -25,12 +26,16 @@ class Paladin():
             self.estadisticas["NIVEL"]
             )
     def Ataque(self, enemigo):
-        if enemigo.estadisticas["SALUD"] <= 0: 
+        if self.estadisticas["ATAQUE"] >= enemigo.estadisticas["DEFENSA"]:
+            enemigo.estadisticas["SALUD"] -= self.estadisticas["ATAQUE"]
+            print("\n Ataque certero {0}, ahora la salud de {1} es de {2}".format(self.nombre,enemigo.nombre,enemigo.estadisticas["SALUD"]))
             self.estadisticas.update(emp.get_itm())
-            print("-->Felicidades has dropeado", emp.get_itm(), " y mejoraste tus atributos<---")
-            items = ()
-            while not items in ["EMBLEMA","PECHERA","BOTAS","POCION","ESPECIAL","emblema","pechera","botas","pocion","especial"]:
-                items = input("¿Que item quieres mejorar? ")
+            if enemigo.estadisticas["SALUD"] <= 0:
+                self.estadisticas.update(emp.get_itm())
+                print("-->Felicidades has dropeado", emp.get_itm(), " y mejoraste tus atributos<---")
+                items = ()
+                while not items in ["EMBLEMA","PECHERA","BOTAS","POCION","ESPECIAL","emblema","pechera","botas","pocion","especial"]:
+                    items = input("¿Que item quieres mejorar? ")
                 if items == ("EMBLEMA").lower():
                     self.estadisticas["ATAQUE"] = self.estadisticas["ATAQUE"] + 10
                     print("Has mejorado tu atributo ATAQUE")
@@ -50,8 +55,5 @@ class Paladin():
                 else:
                     print("No has mejorado tus atributos")
                     print("los atributos que se pueden mejorar son: EMBLEMA, GUANTES, PECHERA, BOTAS, POCION, ESPECIAL")    
-        elif self.estadisticas["ATAQUE"] >= enemigo.estadisticas["DEFENSA"]:
-            enemigo.estadisticas["SALUD"] -= self.estadisticas["ATAQUE"]
-            print("\n Ataque certero de {0}, ahora la salud de {1} es de {2}".format(self.nombre,enemigo.nombre,enemigo.estadisticas["SALUD"]))
-            self.estadisticas.update(emp.get_itm())
-     
+        
+        
